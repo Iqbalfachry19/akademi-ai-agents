@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <header className="px-4 lg:px-6 h-16 flex items-center">
-          <Link className="flex items-center justify-center" href="#">
+          <Link className="flex items-center justify-center" href="/">
             <Brain className="h-6 w-6 mr-2" />
             <span className="font-bold">Akademi AI Agents</span>
           </Link>
