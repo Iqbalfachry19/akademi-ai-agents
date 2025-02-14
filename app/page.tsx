@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { Brain, Code, Users, Zap, Rocket, GraduationCap } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Brain, Code, Users, Zap, Rocket, GraduationCap } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,13 +11,22 @@ export default function Home() {
           <span className="font-bold">Akademi AI Agents</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="/kursus">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="/kursus"
+          >
             Kursus
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             Tentang Kami
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             Kontak
           </Link>
         </nav>
@@ -31,7 +40,8 @@ export default function Home() {
                   Akademi AI Agents
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Pelajari cara membuat dan menggunakan AI Agents untuk meningkatkan produktivitas dan inovasi Anda.
+                  Pelajari cara membuat dan menggunakan AI Agents untuk
+                  meningkatkan produktivitas dan inovasi Anda.
                 </p>
               </div>
               <div className="space-x-4">
@@ -51,44 +61,62 @@ export default function Home() {
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
               <div className="flex flex-col items-center space-y-3 bg-gray-50 p-6 rounded-lg shadow-sm">
                 <Code className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold text-center">Kurikulum Komprehensif</h3>
+                <h3 className="text-xl font-bold text-center">
+                  Kurikulum Komprehensif
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  Dari dasar-dasar Python hingga Physical AI, kurikulum kami mencakup spektrum lengkap pengembangan AI.
+                  Dari dasar-dasar Python hingga Physical AI, kurikulum kami
+                  mencakup spektrum lengkap pengembangan AI.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-3 bg-gray-50 p-6 rounded-lg shadow-sm">
                 <Users className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold text-center">Pembelajaran Interaktif</h3>
+                <h3 className="text-xl font-bold text-center">
+                  Pembelajaran Interaktif
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  Pengalaman belajar hands-on dengan proyek praktis dan kolaborasi sesama peserta.
+                  Pengalaman belajar hands-on dengan proyek praktis dan
+                  kolaborasi sesama peserta.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-3 bg-gray-50 p-6 rounded-lg shadow-sm">
                 <Zap className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold text-center">Teknologi Terkini</h3>
+                <h3 className="text-xl font-bold text-center">
+                  Teknologi Terkini
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  Pelajari teknologi AI terbaru, termasuk LLM, Generative AI, dan framework seperti Zerepy dan ElizaOS.
+                  Pelajari teknologi AI terbaru, termasuk LLM, Generative AI,
+                  dan framework seperti Zerepy dan ElizaOS.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-3 bg-gray-50 p-6 rounded-lg shadow-sm">
                 <GraduationCap className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold text-center">Instruktur Ahli</h3>
+                <h3 className="text-xl font-bold text-center">
+                  Instruktur Ahli
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  Belajar dari para ahli industri dan akademisi terkemuka di bidang AI dan Data Science.
+                  Belajar dari para ahli industri dan akademisi terkemuka di
+                  bidang AI dan Data Science.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-3 bg-gray-50 p-6 rounded-lg shadow-sm">
                 <Rocket className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold text-center">Pengembangan Karir</h3>
+                <h3 className="text-xl font-bold text-center">
+                  Pengembangan Karir
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  Persiapkan diri Anda untuk karir di bidang AI dengan portofolio proyek dan sertifikasi industri.
+                  Persiapkan diri Anda untuk karir di bidang AI dengan
+                  portofolio proyek dan sertifikasi industri.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-3 bg-gray-50 p-6 rounded-lg shadow-sm">
                 <Brain className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold text-center">AI Agents Spesialisasi</h3>
+                <h3 className="text-xl font-bold text-center">
+                  AI Agents Spesialisasi
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  Fokus khusus pada pengembangan dan optimasi AI Agents untuk berbagai aplikasi.
+                  Fokus khusus pada pengembangan dan optimasi AI Agents untuk
+                  berbagai aplikasi.
                 </p>
               </div>
             </div>
@@ -96,7 +124,9 @@ export default function Home() {
         </section>
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Akademi AI Agents. Hak Cipta Dilindungi.</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400">
+          © 2024 Akademi AI Agents. Hak Cipta Dilindungi.
+        </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4" href="#">
             Kebijakan Privasi
@@ -107,6 +137,5 @@ export default function Home() {
         </nav>
       </footer>
     </div>
-  )
+  );
 }
-
