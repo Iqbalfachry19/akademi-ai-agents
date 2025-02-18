@@ -10,34 +10,40 @@ interface SilabusItem {
 
 const silabus: SilabusItem[] = [
   {
-    minggu: "1-2",
-    judul: "Pengenalan Data Science dan Statistik Dasar",
+    minggu: "1",
+    judul: "Pengenalan Zerepy dan Konsep Dasar Optimasi AI Agents",
     deskripsi:
-      "Materi ini memberikan pengenalan tentang Data Science serta dasar-dasar statistik yang berguna untuk analisis data.",
+      "Pengenalan framework Zerepy dan konsep dasar optimasi AI Agents.",
   },
   {
-    minggu: "3-4",
-    judul: "Pengolahan dan Visualisasi Data dengan Python",
+    minggu: "2",
+    judul: "Arsitektur Zerepy dan Implementasi Dasar",
     deskripsi:
-      "Belajar cara mengolah data menggunakan Python dan menampilkan data secara visual dengan bantuan grafik.",
+      "Mempelajari arsitektur Zerepy dan implementasi dasar optimasi AI Agents.",
   },
   {
-    minggu: "5-6",
-    judul: "Analisis Eksploratori Data (EDA)",
+    minggu: "3",
+    judul: "Teknik Optimasi Memori dan Komputasi dengan Zerepy",
     deskripsi:
-      "Pelajari teknik analisis eksploratori data untuk menemukan pola dan insight dari dataset.",
+      "Eksplorasi teknik optimasi memori dan komputasi menggunakan Zerepy.",
   },
   {
-    minggu: "7",
-    judul: "Pengenalan Machine Learning untuk Data Science",
+    minggu: "4",
+    judul: "Paralelisasi dan Distribusi AI Agents menggunakan Zerepy",
     deskripsi:
-      "Memahami konsep dasar Machine Learning dan bagaimana penerapannya dalam dunia Data Science.",
+      "Mempelajari teknik paralelisasi dan distribusi AI Agents dengan Zerepy.",
   },
   {
-    minggu: "8",
-    judul: "Proyek Akhir - Analisis Data End-to-End",
+    minggu: "5",
+    judul: "Optimasi Model dan Hyperparameter Tuning",
     deskripsi:
-      "Integrasikan semua konsep melalui proyek akhir yang mencakup seluruh proses analisis data secara menyeluruh.",
+      "Mendalami teknik optimasi model dan hyperparameter tuning untuk AI Agents.",
+  },
+  {
+    minggu: "6",
+    judul: "Proyek Akhir - Implementasi AI Agent yang Dioptimalkan",
+    deskripsi:
+      "Mengaplikasikan semua konsep yang dipelajari dalam sebuah proyek implementasi AI Agent yang dioptimalkan.",
   },
 ];
 
@@ -81,7 +87,7 @@ const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [feedback, setFeedback] = useState<string>("");
 
-  const correctAnswer = "4";
+  const correctAnswer = "Zerepy";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,10 +103,11 @@ const Quiz = () => {
       <h2 className="text-2xl font-bold mb-4">Quiz</h2>
       <form onSubmit={handleSubmit}>
         <p className="mb-4">
-          Apa hasil dari perhitungan <strong>2 + 2</strong> di Python?
+          Framework yang digunakan untuk optimasi kinerja AI Agents dalam kursus
+          ini adalah:
         </p>
         <div className="space-y-2">
-          {["4", "22", "Error", "None"].map((option) => (
+          {["TensorFlow", "PyTorch", "Zerepy", "Scikit-learn"].map((option) => (
             <div key={option}>
               <label className="flex items-center">
                 <input
@@ -137,13 +144,12 @@ export default function BelajarPage() {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <header>
         <h1 className="text-3xl font-bold mb-4">
-          Kursus Dasar-Dasar Data Science
+          Kursus Optimasi Kinerja AI Agents dengan Zerepy
         </h1>
         <p className="text-lg">
-          Selamat datang di halaman pembelajaran dasar-dasar Data Science. Di
-          sini, kamu akan mempelajari konsep-konsep fundamental mulai dari
-          pengolahan data, analisis, hingga penerapan machine learning dengan
-          contoh-contoh praktis.
+          Selamat datang di halaman pembelajaran Optimasi Kinerja AI Agents. Di
+          sini, kamu akan mempelajari teknik-teknik optimasi AI Agents
+          menggunakan framework Zerepy untuk meningkatkan efisiensi dan kinerja.
         </p>
       </header>
       <nav className="mt-8 flex space-x-4">

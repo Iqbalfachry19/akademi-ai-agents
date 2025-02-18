@@ -10,34 +10,39 @@ interface SilabusItem {
 
 const silabus: SilabusItem[] = [
   {
-    minggu: "1-2",
-    judul: "Pengenalan Data Science dan Statistik Dasar",
+    minggu: "1",
+    judul: "Pengenalan Deployment AI Agents dan Persiapan Lingkungan",
     deskripsi:
-      "Materi ini memberikan pengenalan tentang Data Science serta dasar-dasar statistik yang berguna untuk analisis data.",
+      "Pengenalan konsep deployment AI Agents dan persiapan lingkungan deployment.",
   },
   {
-    minggu: "3-4",
-    judul: "Pengolahan dan Visualisasi Data dengan Python",
+    minggu: "2",
+    judul: "Containerization AI Agents dengan Docker",
     deskripsi:
-      "Belajar cara mengolah data menggunakan Python dan menampilkan data secara visual dengan bantuan grafik.",
+      "Mempelajari teknik containerization AI Agents menggunakan Docker.",
   },
   {
-    minggu: "5-6",
-    judul: "Analisis Eksploratori Data (EDA)",
-    deskripsi:
-      "Pelajari teknik analisis eksploratori data untuk menemukan pola dan insight dari dataset.",
+    minggu: "3",
+    judul: "Deployment ke Cloud Platforms (AWS, Google Cloud, Azure)",
+    deskripsi: "Eksplorasi deployment AI Agents ke berbagai platform cloud.",
   },
   {
-    minggu: "7",
-    judul: "Pengenalan Machine Learning untuk Data Science",
+    minggu: "4",
+    judul: "Skalabilitas dan Load Balancing untuk AI Agents",
     deskripsi:
-      "Memahami konsep dasar Machine Learning dan bagaimana penerapannya dalam dunia Data Science.",
+      "Mempelajari teknik skalabilitas dan load balancing untuk AI Agents.",
   },
   {
-    minggu: "8",
-    judul: "Proyek Akhir - Analisis Data End-to-End",
+    minggu: "5",
+    judul: "Monitoring, Logging, dan Maintenance AI Agents",
     deskripsi:
-      "Integrasikan semua konsep melalui proyek akhir yang mencakup seluruh proses analisis data secara menyeluruh.",
+      "Mendalami teknik monitoring, logging, dan maintenance AI Agents yang sudah di-deploy.",
+  },
+  {
+    minggu: "6",
+    judul: "Proyek Akhir - Full Deployment Workflow untuk AI Agent",
+    deskripsi:
+      "Mengaplikasikan semua konsep yang dipelajari dalam sebuah proyek deployment AI Agent end-to-end.",
   },
 ];
 
@@ -81,7 +86,7 @@ const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [feedback, setFeedback] = useState<string>("");
 
-  const correctAnswer = "4";
+  const correctAnswer = "Docker";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,10 +102,11 @@ const Quiz = () => {
       <h2 className="text-2xl font-bold mb-4">Quiz</h2>
       <form onSubmit={handleSubmit}>
         <p className="mb-4">
-          Apa hasil dari perhitungan <strong>2 + 2</strong> di Python?
+          Teknologi containerization yang digunakan untuk AI Agents deployment
+          dalam kursus ini adalah:
         </p>
         <div className="space-y-2">
-          {["4", "22", "Error", "None"].map((option) => (
+          {["Kubernetes", "Docker", "Vagrant", "VMware"].map((option) => (
             <div key={option}>
               <label className="flex items-center">
                 <input
@@ -136,14 +142,11 @@ export default function BelajarPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <header>
-        <h1 className="text-3xl font-bold mb-4">
-          Kursus Dasar-Dasar Data Science
-        </h1>
+        <h1 className="text-3xl font-bold mb-4">Kursus AI Agents Deployment</h1>
         <p className="text-lg">
-          Selamat datang di halaman pembelajaran dasar-dasar Data Science. Di
-          sini, kamu akan mempelajari konsep-konsep fundamental mulai dari
-          pengolahan data, analisis, hingga penerapan machine learning dengan
-          contoh-contoh praktis.
+          Selamat datang di halaman pembelajaran AI Agents Deployment. Di sini,
+          kamu akan mempelajari teknik-teknik deployment AI Agents ke berbagai
+          platform dan lingkungan produksi.
         </p>
       </header>
       <nav className="mt-8 flex space-x-4">

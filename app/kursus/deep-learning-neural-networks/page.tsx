@@ -1,13 +1,22 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Calendar, Clock, Network, GraduationCap } from "lucide-react"
+import { CourseRegistrationForm } from "@/components/course-registration-form";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Calendar, Clock, Network, GraduationCap } from "lucide-react";
 
 export default function DeepLearningNeuralNetworksPage() {
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-8 text-center">Deep Learning dan Neural Networks</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">
+        Deep Learning dan Neural Networks
+      </h1>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-12">
         <Card>
@@ -44,47 +53,45 @@ export default function DeepLearningNeuralNetworksPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Deskripsi Kursus</h2>
           <p className="mb-4">
-            Kursus "Deep Learning dan Neural Networks" dirancang untuk memberikan pemahaman mendalam tentang arsitektur
-            dan aplikasi Deep Learning. Anda akan mempelajari berbagai jenis neural networks dan cara menerapkannya pada
-            berbagai tugas kompleks.
+            Kursus "Deep Learning dan Neural Networks" dirancang untuk
+            memberikan pemahaman mendalam tentang arsitektur dan aplikasi Deep
+            Learning. Anda akan mempelajari berbagai jenis neural networks dan
+            cara menerapkannya pada berbagai tugas kompleks.
           </p>
           <h2 className="text-2xl font-semibold mb-4">Silabus</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Minggu 1-2: Dasar-dasar Neural Networks dan Backpropagation</li>
-            <li>Minggu 3-4: Convolutional Neural Networks (CNNs) untuk Computer Vision</li>
-            <li>Minggu 5-6: Recurrent Neural Networks (RNNs) dan Long Short-Term Memory (LSTM)</li>
+            <li>
+              Minggu 3-4: Convolutional Neural Networks (CNNs) untuk Computer
+              Vision
+            </li>
+            <li>
+              Minggu 5-6: Recurrent Neural Networks (RNNs) dan Long Short-Term
+              Memory (LSTM)
+            </li>
             <li>Minggu 7-8: Generative Adversarial Networks (GANs)</li>
             <li>Minggu 9-10: Transfer Learning dan Fine-tuning</li>
-            <li>Minggu 11-12: Proyek Akhir - Implementasi Deep Learning untuk Masalah Kompleks</li>
+            <li>
+              Minggu 11-12: Proyek Akhir - Implementasi Deep Learning untuk
+              Masalah Kompleks
+            </li>
           </ul>
         </div>
         <Card>
           <CardHeader>
             <CardTitle>Daftar Kursus</CardTitle>
-            <CardDescription>Isi formulir di bawah untuk mendaftar</CardDescription>
+            <CardDescription>
+              Isi formulir di bawah untuk mendaftar
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            <form>
-              <div className="grid w-full items-center gap-4">
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Nama</Label>
-                  <Input id="name" placeholder="Masukkan nama Anda" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="Masukkan email Anda" type="email" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="experience">Pengalaman Machine Learning</Label>
-                  <Input id="experience" placeholder="Jelaskan pengalaman ML Anda" />
-                </div>
-                <Button className="w-full">Daftar Sekarang</Button>
-              </div>
-            </form>
+            <CourseRegistrationForm
+              courseName="Deep Learning dan Neural Networks"
+              experienceLabel="Pengalaman Machine Learning"
+            />
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }
-

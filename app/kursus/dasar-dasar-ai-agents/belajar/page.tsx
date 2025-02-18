@@ -10,34 +10,28 @@ interface SilabusItem {
 
 const silabus: SilabusItem[] = [
   {
-    minggu: "1-2",
-    judul: "Pengenalan Data Science dan Statistik Dasar",
+    minggu: "1",
+    judul: "Pengenalan AI Agents dan Aplikasinya",
     deskripsi:
-      "Materi ini memberikan pengenalan tentang Data Science serta dasar-dasar statistik yang berguna untuk analisis data.",
+      "Pengenalan konsep dasar AI Agents dan berbagai aplikasinya dalam dunia nyata.",
   },
   {
-    minggu: "3-4",
-    judul: "Pengolahan dan Visualisasi Data dengan Python",
+    minggu: "2",
+    judul: "Arsitektur dan Komponen AI Agents",
     deskripsi:
-      "Belajar cara mengolah data menggunakan Python dan menampilkan data secara visual dengan bantuan grafik.",
+      "Mempelajari arsitektur dasar dan komponen-komponen utama dalam AI Agents.",
   },
   {
-    minggu: "5-6",
-    judul: "Analisis Eksploratori Data (EDA)",
+    minggu: "3",
+    judul: "Pemrograman AI Agents Sederhana",
     deskripsi:
-      "Pelajari teknik analisis eksploratori data untuk menemukan pola dan insight dari dataset.",
+      "Praktik pemrograman AI Agents sederhana menggunakan bahasa pemrograman Python.",
   },
   {
-    minggu: "7",
-    judul: "Pengenalan Machine Learning untuk Data Science",
+    minggu: "4",
+    judul: "Studi Kasus dan Proyek Akhir",
     deskripsi:
-      "Memahami konsep dasar Machine Learning dan bagaimana penerapannya dalam dunia Data Science.",
-  },
-  {
-    minggu: "8",
-    judul: "Proyek Akhir - Analisis Data End-to-End",
-    deskripsi:
-      "Integrasikan semua konsep melalui proyek akhir yang mencakup seluruh proses analisis data secara menyeluruh.",
+      "Mengaplikasikan konsep yang dipelajari dalam studi kasus dan proyek akhir.",
   },
 ];
 
@@ -81,7 +75,8 @@ const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [feedback, setFeedback] = useState<string>("");
 
-  const correctAnswer = "4";
+  const correctAnswer =
+    "Entitas otonom yang dapat berinteraksi dengan lingkungannya";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -96,11 +91,14 @@ const Quiz = () => {
     <section className="mt-8">
       <h2 className="text-2xl font-bold mb-4">Quiz</h2>
       <form onSubmit={handleSubmit}>
-        <p className="mb-4">
-          Apa hasil dari perhitungan <strong>2 + 2</strong> di Python?
-        </p>
+        <p className="mb-4">Apa yang dimaksud dengan AI Agent?</p>
         <div className="space-y-2">
-          {["4", "22", "Error", "None"].map((option) => (
+          {[
+            "Program komputer yang dapat berpikir seperti manusia",
+            "Entitas otonom yang dapat berinteraksi dengan lingkungannya",
+            "Robot fisik dengan kecerdasan buatan",
+            "Sistem pakar untuk pengambilan keputusan",
+          ].map((option) => (
             <div key={option}>
               <label className="flex items-center">
                 <input
@@ -137,13 +135,12 @@ export default function BelajarPage() {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <header>
         <h1 className="text-3xl font-bold mb-4">
-          Kursus Dasar-Dasar Data Science
+          Kursus Dasar-dasar AI Agents
         </h1>
         <p className="text-lg">
-          Selamat datang di halaman pembelajaran dasar-dasar Data Science. Di
-          sini, kamu akan mempelajari konsep-konsep fundamental mulai dari
-          pengolahan data, analisis, hingga penerapan machine learning dengan
-          contoh-contoh praktis.
+          Selamat datang di halaman pembelajaran Dasar-dasar AI Agents. Di sini,
+          kamu akan mempelajari konsep dasar AI Agents, arsitekturnya, dan cara
+          mengimplementasikan AI Agents sederhana.
         </p>
       </header>
       <nav className="mt-8 flex space-x-4">

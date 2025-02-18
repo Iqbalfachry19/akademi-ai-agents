@@ -1,8 +1,15 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Calendar, Clock, Sparkles, GraduationCap } from "lucide-react"
+import { CourseRegistrationForm } from "@/components/course-registration-form";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Calendar, Clock, Sparkles, GraduationCap } from "lucide-react";
 
 export default function GenerativeAIPage() {
   return (
@@ -44,13 +51,17 @@ export default function GenerativeAIPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Deskripsi Kursus</h2>
           <p className="mb-4">
-            Kursus "Generative AI" dirancang untuk mengeksplorasi teknik dan aplikasi terkini dalam bidang Generative
-            AI. Anda akan mempelajari berbagai model generatif dan cara menerapkannya untuk menghasilkan konten kreatif
-            seperti teks, gambar, dan musik.
+            Kursus "Generative AI" dirancang untuk mengeksplorasi teknik dan
+            aplikasi terkini dalam bidang Generative AI. Anda akan mempelajari
+            berbagai model generatif dan cara menerapkannya untuk menghasilkan
+            konten kreatif seperti teks, gambar, dan musik.
           </p>
           <h2 className="text-2xl font-semibold mb-4">Silabus</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Minggu 1-2: Pengenalan Generative AI dan Variational Autoencoders (VAEs)</li>
+            <li>
+              Minggu 1-2: Pengenalan Generative AI dan Variational Autoencoders
+              (VAEs)
+            </li>
             <li>Minggu 3-4: Generative Adversarial Networks (GANs) Lanjutan</li>
             <li>Minggu 5-6: Transformer-based Text Generation</li>
             <li>Minggu 7-8: Diffusion Models untuk Image Generation</li>
@@ -61,30 +72,18 @@ export default function GenerativeAIPage() {
         <Card>
           <CardHeader>
             <CardTitle>Daftar Kursus</CardTitle>
-            <CardDescription>Isi formulir di bawah untuk mendaftar</CardDescription>
+            <CardDescription>
+              Isi formulir di bawah untuk mendaftar
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            <form>
-              <div className="grid w-full items-center gap-4">
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Nama</Label>
-                  <Input id="name" placeholder="Masukkan nama Anda" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="Masukkan email Anda" type="email" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="experience">Pengalaman Deep Learning</Label>
-                  <Input id="experience" placeholder="Jelaskan pengalaman Deep Learning Anda" />
-                </div>
-                <Button className="w-full">Daftar Sekarang</Button>
-              </div>
-            </form>
+            <CourseRegistrationForm
+              courseName="Generative AI"
+              experienceLabel="Pengalaman Deep Learning"
+            />
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }
-

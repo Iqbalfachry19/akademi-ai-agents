@@ -1,8 +1,15 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Calendar, Clock, BotIcon as Robot, GraduationCap } from "lucide-react"
+import { CourseRegistrationForm } from "@/components/course-registration-form";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Calendar, Clock, BotIcon as Robot, GraduationCap } from "lucide-react";
 
 export default function PhysicalAIPage() {
   return (
@@ -44,9 +51,11 @@ export default function PhysicalAIPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Deskripsi Kursus</h2>
           <p className="mb-4">
-            Kursus "Physical AI" dirancang untuk mengeksplorasi penerapan AI dalam sistem fisik dan robotika. Anda akan
-            mempelajari bagaimana mengintegrasikan algoritma AI dengan sensor dan aktuator, serta bagaimana merancang
-            dan mengimplementasikan sistem AI yang dapat berinteraksi dengan dunia fisik.
+            Kursus "Physical AI" dirancang untuk mengeksplorasi penerapan AI
+            dalam sistem fisik dan robotika. Anda akan mempelajari bagaimana
+            mengintegrasikan algoritma AI dengan sensor dan aktuator, serta
+            bagaimana merancang dan mengimplementasikan sistem AI yang dapat
+            berinteraksi dengan dunia fisik.
           </p>
           <h2 className="text-2xl font-semibold mb-4">Silabus</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -61,30 +70,18 @@ export default function PhysicalAIPage() {
         <Card>
           <CardHeader>
             <CardTitle>Daftar Kursus</CardTitle>
-            <CardDescription>Isi formulir di bawah untuk mendaftar</CardDescription>
+            <CardDescription>
+              Isi formulir di bawah untuk mendaftar
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            <form>
-              <div className="grid w-full items-center gap-4">
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Nama</Label>
-                  <Input id="name" placeholder="Masukkan nama Anda" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="Masukkan email Anda" type="email" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="experience">Pengalaman AI dan Robotika</Label>
-                  <Input id="experience" placeholder="Jelaskan pengalaman AI dan robotika Anda" />
-                </div>
-                <Button className="w-full">Daftar Sekarang</Button>
-              </div>
-            </form>
+            <CourseRegistrationForm
+              courseName="Physical AI"
+              experienceLabel="Pengalaman AI dan Robotika"
+            />
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }
-

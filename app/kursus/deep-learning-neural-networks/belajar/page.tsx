@@ -11,33 +11,38 @@ interface SilabusItem {
 const silabus: SilabusItem[] = [
   {
     minggu: "1-2",
-    judul: "Pengenalan Data Science dan Statistik Dasar",
+    judul: "Dasar-dasar Neural Networks dan Backpropagation",
     deskripsi:
-      "Materi ini memberikan pengenalan tentang Data Science serta dasar-dasar statistik yang berguna untuk analisis data.",
+      "Pengenalan arsitektur neural network dan algoritma backpropagation.",
   },
   {
     minggu: "3-4",
-    judul: "Pengolahan dan Visualisasi Data dengan Python",
+    judul: "Convolutional Neural Networks (CNNs) untuk Computer Vision",
     deskripsi:
-      "Belajar cara mengolah data menggunakan Python dan menampilkan data secara visual dengan bantuan grafik.",
+      "Mempelajari arsitektur CNN dan aplikasinya dalam computer vision.",
   },
   {
     minggu: "5-6",
-    judul: "Analisis Eksploratori Data (EDA)",
+    judul: "Recurrent Neural Networks (RNNs) dan Long Short-Term Memory (LSTM)",
     deskripsi:
-      "Pelajari teknik analisis eksploratori data untuk menemukan pola dan insight dari dataset.",
+      "Eksplorasi arsitektur RNN dan LSTM untuk pemrosesan data sekuensial.",
   },
   {
-    minggu: "7",
-    judul: "Pengenalan Machine Learning untuk Data Science",
-    deskripsi:
-      "Memahami konsep dasar Machine Learning dan bagaimana penerapannya dalam dunia Data Science.",
+    minggu: "7-8",
+    judul: "Generative Adversarial Networks (GANs)",
+    deskripsi: "Mendalami konsep dan implementasi GANs untuk generasi konten.",
   },
   {
-    minggu: "8",
-    judul: "Proyek Akhir - Analisis Data End-to-End",
+    minggu: "9-10",
+    judul: "Transfer Learning dan Fine-tuning",
     deskripsi:
-      "Integrasikan semua konsep melalui proyek akhir yang mencakup seluruh proses analisis data secara menyeluruh.",
+      "Belajar teknik transfer learning dan fine-tuning untuk meningkatkan efisiensi pelatihan.",
+  },
+  {
+    minggu: "11-12",
+    judul: "Proyek Akhir - Implementasi Deep Learning untuk Masalah Kompleks",
+    deskripsi:
+      "Mengaplikasikan semua konsep yang dipelajari dalam sebuah proyek deep learning kompleks.",
   },
 ];
 
@@ -81,7 +86,7 @@ const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [feedback, setFeedback] = useState<string>("");
 
-  const correctAnswer = "4";
+  const correctAnswer = "Convolutional Neural Network (CNN)";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,10 +102,16 @@ const Quiz = () => {
       <h2 className="text-2xl font-bold mb-4">Quiz</h2>
       <form onSubmit={handleSubmit}>
         <p className="mb-4">
-          Apa hasil dari perhitungan <strong>2 + 2</strong> di Python?
+          Jenis arsitektur neural network yang paling cocok untuk tugas computer
+          vision adalah:
         </p>
         <div className="space-y-2">
-          {["4", "22", "Error", "None"].map((option) => (
+          {[
+            "Recurrent Neural Network (RNN)",
+            "Convolutional Neural Network (CNN)",
+            "Feedforward Neural Network",
+            "Long Short-Term Memory (LSTM)",
+          ].map((option) => (
             <div key={option}>
               <label className="flex items-center">
                 <input
@@ -137,13 +148,13 @@ export default function BelajarPage() {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <header>
         <h1 className="text-3xl font-bold mb-4">
-          Kursus Dasar-Dasar Data Science
+          Kursus Deep Learning dan Neural Networks
         </h1>
         <p className="text-lg">
-          Selamat datang di halaman pembelajaran dasar-dasar Data Science. Di
-          sini, kamu akan mempelajari konsep-konsep fundamental mulai dari
-          pengolahan data, analisis, hingga penerapan machine learning dengan
-          contoh-contoh praktis.
+          Selamat datang di halaman pembelajaran Deep Learning dan Neural
+          Networks. Di sini, kamu akan mempelajari arsitektur neural network
+          lanjutan, teknik-teknik deep learning, dan aplikasinya dalam berbagai
+          bidang.
         </p>
       </header>
       <nav className="mt-8 flex space-x-4">

@@ -11,33 +11,36 @@ interface SilabusItem {
 const silabus: SilabusItem[] = [
   {
     minggu: "1-2",
-    judul: "Pengenalan Data Science dan Statistik Dasar",
+    judul: "Pengenalan Generative AI dan Variational Autoencoders (VAEs)",
     deskripsi:
-      "Materi ini memberikan pengenalan tentang Data Science serta dasar-dasar statistik yang berguna untuk analisis data.",
+      "Pengenalan konsep dasar Generative AI dan arsitektur Variational Autoencoders.",
   },
   {
     minggu: "3-4",
-    judul: "Pengolahan dan Visualisasi Data dengan Python",
-    deskripsi:
-      "Belajar cara mengolah data menggunakan Python dan menampilkan data secara visual dengan bantuan grafik.",
+    judul: "Generative Adversarial Networks (GANs) Lanjutan",
+    deskripsi: "Mempelajari arsitektur GAN lanjutan dan aplikasinya.",
   },
   {
     minggu: "5-6",
-    judul: "Analisis Eksploratori Data (EDA)",
+    judul: "Transformer-based Text Generation",
     deskripsi:
-      "Pelajari teknik analisis eksploratori data untuk menemukan pola dan insight dari dataset.",
+      "Eksplorasi teknik generasi teks berbasis arsitektur Transformer.",
   },
   {
-    minggu: "7",
-    judul: "Pengenalan Machine Learning untuk Data Science",
-    deskripsi:
-      "Memahami konsep dasar Machine Learning dan bagaimana penerapannya dalam dunia Data Science.",
+    minggu: "7-8",
+    judul: "Diffusion Models untuk Image Generation",
+    deskripsi: "Mempelajari model difusi untuk generasi gambar.",
   },
   {
-    minggu: "8",
-    judul: "Proyek Akhir - Analisis Data End-to-End",
+    minggu: "9",
+    judul: "Multimodal Generative AI",
+    deskripsi: "Mendalami teknik Generative AI untuk data multimodal.",
+  },
+  {
+    minggu: "10",
+    judul: "Proyek Akhir - Implementasi Sistem Generative AI",
     deskripsi:
-      "Integrasikan semua konsep melalui proyek akhir yang mencakup seluruh proses analisis data secara menyeluruh.",
+      "Mengaplikasikan semua konsep yang dipelajari dalam sebuah proyek Generative AI.",
   },
 ];
 
@@ -81,7 +84,7 @@ const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [feedback, setFeedback] = useState<string>("");
 
-  const correctAnswer = "4";
+  const correctAnswer = "Generative Adversarial Network (GAN)";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,10 +100,16 @@ const Quiz = () => {
       <h2 className="text-2xl font-bold mb-4">Quiz</h2>
       <form onSubmit={handleSubmit}>
         <p className="mb-4">
-          Apa hasil dari perhitungan <strong>2 + 2</strong> di Python?
+          Model generatif yang terdiri dari generator dan discriminator yang
+          bersaing adalah:
         </p>
         <div className="space-y-2">
-          {["4", "22", "Error", "None"].map((option) => (
+          {[
+            "Variational Autoencoder (VAE)",
+            "Generative Adversarial Network (GAN)",
+            "Transformer",
+            "Diffusion Model",
+          ].map((option) => (
             <div key={option}>
               <label className="flex items-center">
                 <input
@@ -136,14 +145,11 @@ export default function BelajarPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <header>
-        <h1 className="text-3xl font-bold mb-4">
-          Kursus Dasar-Dasar Data Science
-        </h1>
+        <h1 className="text-3xl font-bold mb-4">Kursus Generative AI</h1>
         <p className="text-lg">
-          Selamat datang di halaman pembelajaran dasar-dasar Data Science. Di
-          sini, kamu akan mempelajari konsep-konsep fundamental mulai dari
-          pengolahan data, analisis, hingga penerapan machine learning dengan
-          contoh-contoh praktis.
+          Selamat datang di halaman pembelajaran Generative AI. Di sini, kamu
+          akan mempelajari berbagai teknik dan model generatif untuk
+          menghasilkan konten kreatif seperti teks, gambar, dan data multimodal.
         </p>
       </header>
       <nav className="mt-8 flex space-x-4">

@@ -11,33 +11,39 @@ interface SilabusItem {
 const silabus: SilabusItem[] = [
   {
     minggu: "1-2",
-    judul: "Pengenalan Data Science dan Statistik Dasar",
+    judul: "Pengenalan Machine Learning dan Python untuk ML",
     deskripsi:
-      "Materi ini memberikan pengenalan tentang Data Science serta dasar-dasar statistik yang berguna untuk analisis data.",
+      "Pengenalan konsep dasar machine learning dan penggunaan Python untuk implementasi ML.",
   },
   {
     minggu: "3-4",
-    judul: "Pengolahan dan Visualisasi Data dengan Python",
+    judul: "Supervised Learning (Regresi dan Klasifikasi)",
     deskripsi:
-      "Belajar cara mengolah data menggunakan Python dan menampilkan data secara visual dengan bantuan grafik.",
+      "Mempelajari algoritma supervised learning untuk masalah regresi dan klasifikasi.",
   },
   {
     minggu: "5-6",
-    judul: "Analisis Eksploratori Data (EDA)",
+    judul: "Unsupervised Learning (Clustering dan Dimensionality Reduction)",
     deskripsi:
-      "Pelajari teknik analisis eksploratori data untuk menemukan pola dan insight dari dataset.",
+      "Eksplorasi teknik unsupervised learning seperti clustering dan pengurangan dimensi.",
   },
   {
-    minggu: "7",
-    judul: "Pengenalan Machine Learning untuk Data Science",
+    minggu: "7-8",
+    judul: "Evaluasi Model dan Optimisasi Hyperparameter",
     deskripsi:
-      "Memahami konsep dasar Machine Learning dan bagaimana penerapannya dalam dunia Data Science.",
+      "Belajar cara mengevaluasi performa model ML dan mengoptimalkan hyperparameter.",
   },
   {
-    minggu: "8",
-    judul: "Proyek Akhir - Analisis Data End-to-End",
+    minggu: "9",
+    judul: "Ensemble Methods dan Feature Engineering",
     deskripsi:
-      "Integrasikan semua konsep melalui proyek akhir yang mencakup seluruh proses analisis data secara menyeluruh.",
+      "Mendalami metode ensemble dan teknik feature engineering untuk meningkatkan performa model.",
+  },
+  {
+    minggu: "10",
+    judul: "Proyek Akhir - Implementasi ML End-to-End",
+    deskripsi:
+      "Mengaplikasikan semua konsep yang dipelajari dalam sebuah proyek ML end-to-end.",
   },
 ];
 
@@ -81,7 +87,7 @@ const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [feedback, setFeedback] = useState<string>("");
 
-  const correctAnswer = "4";
+  const correctAnswer = "Supervised Learning";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,10 +103,16 @@ const Quiz = () => {
       <h2 className="text-2xl font-bold mb-4">Quiz</h2>
       <form onSubmit={handleSubmit}>
         <p className="mb-4">
-          Apa hasil dari perhitungan <strong>2 + 2</strong> di Python?
+          Jenis pembelajaran mesin yang menggunakan data berlabel untuk melatih
+          model adalah:
         </p>
         <div className="space-y-2">
-          {["4", "22", "Error", "None"].map((option) => (
+          {[
+            "Supervised Learning",
+            "Unsupervised Learning",
+            "Reinforcement Learning",
+            "Semi-supervised Learning",
+          ].map((option) => (
             <div key={option}>
               <label className="flex items-center">
                 <input
@@ -137,13 +149,12 @@ export default function BelajarPage() {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <header>
         <h1 className="text-3xl font-bold mb-4">
-          Kursus Dasar-Dasar Data Science
+          Kursus Machine Learning Fundamental
         </h1>
         <p className="text-lg">
-          Selamat datang di halaman pembelajaran dasar-dasar Data Science. Di
-          sini, kamu akan mempelajari konsep-konsep fundamental mulai dari
-          pengolahan data, analisis, hingga penerapan machine learning dengan
-          contoh-contoh praktis.
+          Selamat datang di halaman pembelajaran Machine Learning Fundamental.
+          Di sini, kamu akan mempelajari konsep-konsep dasar machine learning,
+          algoritma populer, dan cara mengimplementasikannya menggunakan Python.
         </p>
       </header>
       <nav className="mt-8 flex space-x-4">

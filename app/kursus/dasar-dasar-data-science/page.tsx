@@ -1,13 +1,20 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Calendar, Clock, Database, GraduationCap } from "lucide-react"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Calendar, Clock, Database, GraduationCap } from "lucide-react";
+import { CourseRegistrationForm } from "../../../components/course-registration-form";
+import Link from "next/link";
 
 export default function DasarDasarDataSciencePage() {
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-8 text-center">Dasar-dasar Data Science</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">
+        Dasar-dasar Data Science
+      </h1>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-12">
         <Card>
@@ -44,9 +51,10 @@ export default function DasarDasarDataSciencePage() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Deskripsi Kursus</h2>
           <p className="mb-4">
-            Kursus "Dasar-dasar Data Science" dirancang untuk memperkenalkan Anda pada konsep fundamental dan alat-alat
-            dalam Data Science. Anda akan mempelajari cara mengumpulkan, menganalisis, dan menginterpretasikan data
-            untuk menghasilkan wawasan yang berharga.
+            Kursus "Dasar-dasar Data Science" dirancang untuk memperkenalkan
+            Anda pada konsep fundamental dan alat-alat dalam Data Science. Anda
+            akan mempelajari cara mengumpulkan, menganalisis, dan
+            menginterpretasikan data untuk menghasilkan wawasan yang berharga.
           </p>
           <h2 className="text-2xl font-semibold mb-4">Silabus</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -60,30 +68,18 @@ export default function DasarDasarDataSciencePage() {
         <Card>
           <CardHeader>
             <CardTitle>Daftar Kursus</CardTitle>
-            <CardDescription>Isi formulir di bawah untuk mendaftar</CardDescription>
+            <CardDescription>
+              Isi formulir di bawah untuk mendaftar
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            <form>
-              <div className="grid w-full items-center gap-4">
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Nama</Label>
-                  <Input id="name" placeholder="Masukkan nama Anda" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="Masukkan email Anda" type="email" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="background">Latar Belakang</Label>
-                  <Input id="background" placeholder="Jelaskan latar belakang Anda" />
-                </div>
-                <Button className="w-full">Daftar Sekarang</Button>
-              </div>
-            </form>
+            <CourseRegistrationForm
+              courseName="Dasar-dasar Data Science"
+              experienceLabel="Latar Belakang"
+            />
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }
-

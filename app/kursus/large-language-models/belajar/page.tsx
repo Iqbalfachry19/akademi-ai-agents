@@ -11,33 +11,37 @@ interface SilabusItem {
 const silabus: SilabusItem[] = [
   {
     minggu: "1-2",
-    judul: "Pengenalan Data Science dan Statistik Dasar",
+    judul: "Pengenalan LLM dan Arsitektur Transformer",
     deskripsi:
-      "Materi ini memberikan pengenalan tentang Data Science serta dasar-dasar statistik yang berguna untuk analisis data.",
+      "Pengenalan konsep dasar Large Language Models dan arsitektur Transformer.",
   },
   {
     minggu: "3-4",
-    judul: "Pengolahan dan Visualisasi Data dengan Python",
-    deskripsi:
-      "Belajar cara mengolah data menggunakan Python dan menampilkan data secara visual dengan bantuan grafik.",
+    judul: "Teknik Pre-training dan Fine-tuning LLM",
+    deskripsi: "Mempelajari teknik pre-training dan fine-tuning untuk LLM.",
   },
   {
-    minggu: "5-6",
-    judul: "Analisis Eksploratori Data (EDA)",
+    minggu: "5",
+    judul: "Prompt Engineering dan Few-shot Learning",
     deskripsi:
-      "Pelajari teknik analisis eksploratori data untuk menemukan pola dan insight dari dataset.",
+      "Eksplorasi teknik prompt engineering dan few-shot learning untuk LLM.",
+  },
+  {
+    minggu: "6",
+    judul: "Etika dan Bias dalam LLM",
+    deskripsi:
+      "Membahas isu-isu etika dan bias dalam pengembangan dan penggunaan LLM.",
   },
   {
     minggu: "7",
-    judul: "Pengenalan Machine Learning untuk Data Science",
-    deskripsi:
-      "Memahami konsep dasar Machine Learning dan bagaimana penerapannya dalam dunia Data Science.",
+    judul: "Aplikasi LLM dalam NLP Tasks",
+    deskripsi: "Mempelajari berbagai aplikasi LLM dalam tugas-tugas NLP.",
   },
   {
     minggu: "8",
-    judul: "Proyek Akhir - Analisis Data End-to-End",
+    judul: "Proyek Akhir - Implementasi dan Fine-tuning LLM",
     deskripsi:
-      "Integrasikan semua konsep melalui proyek akhir yang mencakup seluruh proses analisis data secara menyeluruh.",
+      "Mengaplikasikan semua konsep yang dipelajari dalam sebuah proyek implementasi dan fine-tuning LLM.",
   },
 ];
 
@@ -81,7 +85,7 @@ const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [feedback, setFeedback] = useState<string>("");
 
-  const correctAnswer = "4";
+  const correctAnswer = "Transformer";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,10 +101,16 @@ const Quiz = () => {
       <h2 className="text-2xl font-bold mb-4">Quiz</h2>
       <form onSubmit={handleSubmit}>
         <p className="mb-4">
-          Apa hasil dari perhitungan <strong>2 + 2</strong> di Python?
+          Arsitektur yang menjadi dasar sebagian besar Large Language Models
+          modern adalah:
         </p>
         <div className="space-y-2">
-          {["4", "22", "Error", "None"].map((option) => (
+          {[
+            "Recurrent Neural Network (RNN)",
+            "Convolutional Neural Network (CNN)",
+            "Transformer",
+            "Long Short-Term Memory (LSTM)",
+          ].map((option) => (
             <div key={option}>
               <label className="flex items-center">
                 <input
@@ -137,13 +147,13 @@ export default function BelajarPage() {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <header>
         <h1 className="text-3xl font-bold mb-4">
-          Kursus Dasar-Dasar Data Science
+          Kursus Large Language Models (LLM)
         </h1>
         <p className="text-lg">
-          Selamat datang di halaman pembelajaran dasar-dasar Data Science. Di
-          sini, kamu akan mempelajari konsep-konsep fundamental mulai dari
-          pengolahan data, analisis, hingga penerapan machine learning dengan
-          contoh-contoh praktis.
+          Selamat datang di halaman pembelajaran Large Language Models. Di sini,
+          kamu akan mempelajari konsep-konsep dasar LLM, teknik-teknik
+          pengembangan dan penggunaan LLM, serta aplikasinya dalam berbagai
+          tugas NLP.
         </p>
       </header>
       <nav className="mt-8 flex space-x-4">
