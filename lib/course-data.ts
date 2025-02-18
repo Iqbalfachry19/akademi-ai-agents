@@ -153,6 +153,6 @@ export const courseData: CourseData = {
       },
     ],
   },
-  // Tambahkan data untuk kursus lainnya di sini
+  
 }
 
