@@ -199,7 +199,7 @@ export default function Home() {
             </p>
             <Button asChild size="lg">
               <Link
-                href="https://discord.gg/uRxP7TxT"
+                href="https://discord.gg/vmyay3v7"
                 target="_blank"
                 rel="noopener noreferrer"
               >
