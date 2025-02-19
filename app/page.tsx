@@ -115,9 +115,7 @@ export default function Home() {
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
               <div className="flex flex-col p-6 bg-white rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold text-center mb-4">Basic</h3>
-                <p className="text-4xl font-bold text-center mb-6">
-                  Rp 500.000<span className="text-sm font-normal">/bulan</span>
-                </p>
+                <p className="text-4xl font-bold text-center mb-6">Free</p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />{" "}
@@ -137,7 +135,7 @@ export default function Home() {
               <div className="flex flex-col p-6 bg-white rounded-lg shadow-lg border-2 border-primary">
                 <h3 className="text-2xl font-bold text-center mb-4">Pro</h3>
                 <p className="text-4xl font-bold text-center mb-6">
-                  Rp 1.000.000
+                  Rp 2.000.000
                   <span className="text-sm font-normal">/bulan</span>
                 </p>
                 <ul className="space-y-2 mb-6">
