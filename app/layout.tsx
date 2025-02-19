@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <header className="px-4 lg:px-6 h-16 flex items-center">
-          <Link className="flex items-center justify-center" href="/">
+          <Link className="flex items-center justify-center" href="#">
             <Brain className="h-6 w-6 mr-2" />
             <span className="font-bold">Akademi AI Agents</span>
           </Link>
@@ -34,13 +34,19 @@ export default function RootLayout({
             </Link>
             <Link
               className="text-sm font-medium hover:underline underline-offset-4"
-              href="#"
+              href="#pricing"
+            >
+              Harga
+            </Link>
+            <Link
+              className="text-sm font-medium hover:underline underline-offset-4"
+              href="#about"
             >
               Tentang Kami
             </Link>
             <Link
               className="text-sm font-medium hover:underline underline-offset-4"
-              href="#"
+              href="#contact"
             >
               Kontak
             </Link>

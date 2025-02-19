@@ -6,9 +6,9 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import { LoaderIcon } from "lucide-react";
 
@@ -57,9 +57,23 @@ export function PythonPlayground() {
 
     setIsLoading(true);
     setError(null);
+    setOutput("");
     try {
-      const result = await pyodide.runPythonAsync(code);
+      // Redirect Python stdout to a buffer
+      await pyodide.runPythonAsync(`
+        import io, sys
+        sys.stdout = io.StringIO()
+      `);
+
+      // Run the user's code
+      await pyodide.runPythonAsync(code);
+
+      // Get the contents of the buffer
+      const result = await pyodide.runPythonAsync("sys.stdout.getvalue()");
       setOutput(result);
+
+      // Reset stdout
+      await pyodide.runPythonAsync("sys.stdout = sys.__stdout__");
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -94,7 +108,9 @@ export function PythonPlayground() {
         </Button>
         {error && <div className="text-red-500">{error}</div>}
         <div className="w-full p-2 bg-gray-100 rounded">
-          <pre className="whitespace-pre-wrap">{output}</pre>
+          <pre className="whitespace-pre-wrap">
+            {output || "Tidak ada output"}
+          </pre>
         </div>
       </CardFooter>
     </Card>

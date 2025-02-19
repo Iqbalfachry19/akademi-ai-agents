@@ -32,6 +32,12 @@ export function LearningPreferences({
 
   const handleSave = () => {
     onSave(preferences);
+    // Mematikan suara bot jika audio dimatikan
+    if (!preferences.audioEnabled) {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+    }
   };
 
   return (
