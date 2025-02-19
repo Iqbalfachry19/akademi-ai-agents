@@ -119,7 +119,7 @@ export default function Home() {
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />{" "}
-                    Akses ke 5 kursus dasar
+                    Akses ke 3 kursus dasar
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />{" "}
