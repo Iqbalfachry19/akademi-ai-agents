@@ -199,7 +199,7 @@ export default function Home() {
             </p>
             <Button asChild size="lg">
               <Link
-                href="https://discord.gg/akademi-ai-agents"
+                href="https://discord.gg/uRxP7TxT"
                 target="_blank"
                 rel="noopener noreferrer"
               >
