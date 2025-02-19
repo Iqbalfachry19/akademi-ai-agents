@@ -5,13 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { courseData } from "../lib/course-data";
+import { courseData } from "@/lib/course-data";
 
 type QuizProps = {
   course: string;
+  sectionIndex: number;
 };
 
-export function Quiz({ course }: QuizProps) {
+export function Quiz({ course, sectionIndex }: QuizProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [score, setScore] = useState(0);
@@ -19,20 +20,20 @@ export function Quiz({ course }: QuizProps) {
 
   const courseInfo = courseData[course];
 
-  if (!courseInfo || !courseInfo.quiz) {
+  if (!courseInfo || !courseInfo.syllabus[sectionIndex].quiz) {
     return (
       <Card>
         <CardHeader>
           <CardTitle>Quiz Tidak Tersedia</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>Maaf, quiz untuk kursus ini belum tersedia.</p>
+          <p>Maaf, quiz untuk bagian ini belum tersedia.</p>
         </CardContent>
       </Card>
     );
   }
 
-  const quizQuestions = courseInfo.quiz;
+  const quizQuestions = courseInfo.syllabus[sectionIndex].quiz;
 
   const handleSubmit = () => {
     if (selectedAnswer === quizQuestions[currentQuestion].correctAnswer) {
@@ -53,7 +54,7 @@ export function Quiz({ course }: QuizProps) {
           <CardTitle>Quiz Selesai</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>Selamat! Anda telah menyelesaikan quiz.</p>
+          <p>Selamat! Anda telah menyelesaikan quiz untuk bagian ini.</p>
           <p>
             Skor Anda: {score}/{quizQuestions.length}
           </p>
@@ -65,7 +66,7 @@ export function Quiz({ course }: QuizProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Quiz: {courseInfo.title}</CardTitle>
+        <CardTitle>Quiz: {courseInfo.syllabus[sectionIndex].title}</CardTitle>
       </CardHeader>
       <CardContent>
         <h3 className="text-lg font-semibold mb-4">

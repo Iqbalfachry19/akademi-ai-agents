@@ -1,19 +1,23 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export function VideoPembelajaran() {
+type VideoPembelajaranProps = {
+  videoUrl: string;
+};
+
+export function VideoPembelajaran({ videoUrl }: VideoPembelajaranProps) {
   return (
     <Card>
       <CardHeader>
         <CardTitle>Video Pembelajaran</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="aspect-w-16 aspect-h-9">
+        <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
           <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            src={videoUrl}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="w-full h-full"
+            className="absolute top-0 left-0 w-full h-full"
           ></iframe>
         </div>
       </CardContent>

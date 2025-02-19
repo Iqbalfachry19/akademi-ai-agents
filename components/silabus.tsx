@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { courseData, type SyllabusItem } from "../lib/course-data";
+import { courseData, type SyllabusItem } from "@/lib/course-data";
 import {
   Accordion,
   AccordionContent,
@@ -9,9 +9,15 @@ import {
 
 type SilabusProps = {
   course: string;
+  activeSection: number;
+  onSectionChange: (index: number) => void;
 };
 
-export function Silabus({ course }: SilabusProps) {
+export function Silabus({
+  course,
+  activeSection,
+  onSectionChange,
+}: SilabusProps) {
   const courseInfo = courseData[course];
 
   if (!courseInfo) {
@@ -36,7 +42,14 @@ export function Silabus({ course }: SilabusProps) {
         <Accordion type="single" collapsible className="w-full">
           {courseInfo.syllabus.map((item: SyllabusItem, index: number) => (
             <AccordionItem value={`item-${index}`} key={index}>
-              <AccordionTrigger>{item.title}</AccordionTrigger>
+              <AccordionTrigger
+                onClick={() => onSectionChange(index)}
+                className={
+                  activeSection === index ? "font-bold text-blue-500" : ""
+                }
+              >
+                {item.title}
+              </AccordionTrigger>
               <AccordionContent>
                 <ul className="list-disc pl-5 space-y-2">
                   {item.topics.map((topic: string, topicIndex: number) => (

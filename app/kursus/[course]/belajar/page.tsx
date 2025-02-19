@@ -10,15 +10,15 @@ import { AIAgentChat } from "@/components/ai-agent-chat";
 import { Silabus } from "@/components/silabus";
 import { VideoPembelajaran } from "@/components/video-pembelajaran";
 import { Quiz } from "@/components/quiz";
+import { courseData } from "@/lib/course-data";
 
 export default function BelajarPage({
   params,
 }: {
   params: { course: string };
 }) {
-  const [activeTab, setActiveTab] = useState<"silabus" | "video" | "quiz">(
-    "silabus"
-  );
+  const [activeSection, setActiveSection] = useState(0);
+  const [activeContent, setActiveContent] = useState<"video" | "quiz">("video");
   const [learningStyle, setLearningStyle] = useState<Record<
     string,
     string
@@ -36,13 +36,13 @@ export default function BelajarPage({
     "Selamat datang di kursus ini!"
   );
 
+  const course = courseData[params.course];
+
   useEffect(() => {
-    // Load learning style and progress from local storage or API
     const storedLearningStyle = localStorage.getItem("learningStyle");
     if (storedLearningStyle) {
       setLearningStyle(JSON.parse(storedLearningStyle));
     }
-    // Similar logic for userProgress
   }, []);
 
   const handleLearningStyleComplete = (style: Record<string, string>) => {
@@ -55,7 +55,6 @@ export default function BelajarPage({
   };
 
   const handlePreferencesSave = (preferences: any) => {
-    // Save preferences to local storage or API
     console.log("Preferences saved:", preferences);
     setAvatarEmotion("thinking");
     setAvatarSpeech(
@@ -63,39 +62,37 @@ export default function BelajarPage({
     );
   };
 
-  const handleTabChange = (tab: "silabus" | "video" | "quiz") => {
-    setActiveTab(tab);
-    switch (tab) {
-      case "silabus":
-        setAvatarEmotion("happy");
-        setAvatarSpeech(
-          "Mari kita lihat apa yang akan Anda pelajari dalam kursus ini!"
-        );
-        break;
-      case "video":
-        setAvatarEmotion("thinking");
-        setAvatarSpeech(
-          "Video pembelajaran akan membantu Anda memahami konsep dengan lebih baik."
-        );
-        break;
-      case "quiz":
-        setAvatarEmotion("confused");
-        setAvatarSpeech(
-          "Siap untuk menguji pengetahuan Anda? Jangan khawatir, ini akan menyenangkan!"
-        );
-        break;
+  const handleSectionChange = (index: number) => {
+    setActiveSection(index);
+    setActiveContent("video");
+    setAvatarEmotion("happy");
+    setAvatarSpeech(
+      `Mari kita pelajari tentang ${course.syllabus[index].title}!`
+    );
+  };
+
+  const handleContentChange = (content: "video" | "quiz") => {
+    setActiveContent(content);
+    if (content === "video") {
+      setAvatarEmotion("thinking");
+      setAvatarSpeech(
+        "Video pembelajaran akan membantu Anda memahami konsep dengan lebih baik."
+      );
+    } else {
+      setAvatarEmotion("confused");
+      setAvatarSpeech(
+        "Siap untuk menguji pengetahuan Anda? Jangan khawatir, ini akan menyenangkan!"
+      );
     }
   };
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <header>
-        <h1 className="text-3xl font-bold mb-4">
-          Kursus {params.course.replace(/-/g, " ")}
-        </h1>
+        <h1 className="text-3xl font-bold mb-4">Kursus {course.title}</h1>
         <p className="text-lg mb-4">
           Selamat datang di halaman pembelajaran. Di sini, kamu akan mempelajari
-          konsep-konsep penting dalam {params.course.replace(/-/g, " ")}.
+          konsep-konsep penting dalam {course.title}.
         </p>
       </header>
 
@@ -105,28 +102,43 @@ export default function BelajarPage({
 
       <div className="grid grid-cols-3 gap-4 mb-8">
         <div className="col-span-2">
-          <nav className="flex space-x-4 mb-4">
-            {["silabus", "video", "quiz"].map((tab) => (
+          <Silabus
+            course={params.course}
+            activeSection={activeSection}
+            onSectionChange={handleSectionChange}
+          />
+          <div className="mt-4">
+            <nav className="flex space-x-4 mb-4">
               <button
-                key={tab}
-                onClick={() =>
-                  handleTabChange(tab as "silabus" | "video" | "quiz")
-                }
+                onClick={() => handleContentChange("video")}
                 className={`px-4 py-2 rounded ${
-                  activeTab === tab
+                  activeContent === "video"
                     ? "bg-blue-500 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                Video
               </button>
-            ))}
-          </nav>
-          <main>
-            {activeTab === "silabus" && <Silabus course={params.course} />}
-            {activeTab === "video" && <VideoPembelajaran />}
-            {activeTab === "quiz" && <Quiz course={params.course} />}
-          </main>
+              <button
+                onClick={() => handleContentChange("quiz")}
+                className={`px-4 py-2 rounded ${
+                  activeContent === "quiz"
+                    ? "bg-blue-500 text-white"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                }`}
+              >
+                Quiz
+              </button>
+            </nav>
+            {activeContent === "video" && (
+              <VideoPembelajaran
+                videoUrl={course.syllabus[activeSection].videoUrl}
+              />
+            )}
+            {activeContent === "quiz" && (
+              <Quiz course={params.course} sectionIndex={activeSection} />
+            )}
+          </div>
         </div>
         <div>
           <UserProgress {...userProgress} />
