@@ -143,7 +143,7 @@ export default function TentangPage() {
         </div>
       </section> */}
 
-      <section>
+      {/* <section>
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           Bergabung dengan Kami
         </h2>
@@ -167,7 +167,7 @@ export default function TentangPage() {
             </a>
           </p>
         </Card>
-      </section>
+      </section> */}
     </div>
   );
 }
