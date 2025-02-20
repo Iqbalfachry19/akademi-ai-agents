@@ -15,7 +15,7 @@ export default function KontakPage() {
         </p>
       </header>
 
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="flex justify-center items-center">
         <div>
           <Card>
             <CardHeader>
