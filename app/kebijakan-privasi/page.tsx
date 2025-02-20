@@ -8,7 +8,7 @@ export default function KebijakanPrivasiPage() {
           Kebijakan Privasi
         </h1>
         <p className="text-lg text-gray-600">
-          Terakhir diperbarui: 20 Februari 2024
+          Terakhir diperbarui: 20 Februari 2025
         </p>
       </header>
 
