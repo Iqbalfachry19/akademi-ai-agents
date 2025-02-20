@@ -74,7 +74,7 @@ export default function KontakPage() {
             </CardContent>
           </Card>
         </div>
-
+        {/* 
         <div className="space-y-8">
           <Card>
             <CardHeader>
@@ -162,7 +162,7 @@ export default function KontakPage() {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
       </div>
     </div>
   );
