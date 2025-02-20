@@ -65,22 +65,33 @@ export function Quiz({ course, sectionIndex }: QuizProps) {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Quiz: {courseInfo.syllabus[sectionIndex].title}</CardTitle>
+      <CardHeader className="px-4 py-3 md:px-6 md:py-4">
+        <CardTitle className="text-lg md:text-xl">
+          Quiz: {courseInfo.syllabus[sectionIndex].title}
+        </CardTitle>
       </CardHeader>
-      <CardContent>
-        <h3 className="text-lg font-semibold mb-4">
+      <CardContent className="px-4 md:px-6">
+        <h3 className="text-base md:text-lg font-semibold mb-4">
           {quizQuestions[currentQuestion].question}
         </h3>
-        <RadioGroup value={selectedAnswer} onValueChange={setSelectedAnswer}>
+        <RadioGroup
+          value={selectedAnswer}
+          onValueChange={setSelectedAnswer}
+          className="space-y-2 md:space-y-3"
+        >
           {quizQuestions[currentQuestion].options.map((option, index) => (
             <div key={index} className="flex items-center space-x-2">
               <RadioGroupItem value={option} id={`option-${index}`} />
-              <Label htmlFor={`option-${index}`}>{option}</Label>
+              <Label
+                htmlFor={`option-${index}`}
+                className="text-sm md:text-base"
+              >
+                {option}
+              </Label>
             </div>
           ))}
         </RadioGroup>
-        <Button onClick={handleSubmit} className="mt-4">
+        <Button onClick={handleSubmit} className="mt-4 w-full md:w-auto">
           {currentQuestion < quizQuestions.length - 1
             ? "Selanjutnya"
             : "Selesai"}

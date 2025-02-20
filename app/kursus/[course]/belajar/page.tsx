@@ -87,10 +87,12 @@ export default function BelajarPage({
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="container mx-auto px-4 py-4 md:py-8 max-w-4xl">
       <header>
-        <h1 className="text-3xl font-bold mb-4">Kursus {course.title}</h1>
-        <p className="text-lg mb-4">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4">
+          Kursus {course.title}
+        </h1>
+        <p className="text-base md:text-lg mb-4">
           Selamat datang di halaman pembelajaran. Di sini, kamu akan mempelajari
           konsep-konsep penting dalam {course.title}.
         </p>
@@ -100,18 +102,18 @@ export default function BelajarPage({
         <LearningStyleQuiz onComplete={handleLearningStyleComplete} />
       )}
 
-      <div className="grid grid-cols-3 gap-4 mb-8">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
+        <div className="col-span-1 lg:col-span-2">
           <Silabus
             course={params.course}
             activeSection={activeSection}
             onSectionChange={handleSectionChange}
           />
           <div className="mt-4">
-            <nav className="flex space-x-4 mb-4">
+            <nav className="flex flex-wrap gap-2 mb-4">
               <button
                 onClick={() => handleContentChange("video")}
-                className={`px-4 py-2 rounded ${
+                className={`px-3 py-2 text-sm md:px-4 md:py-2 md:text-base rounded ${
                   activeContent === "video"
                     ? "bg-blue-500 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -121,7 +123,7 @@ export default function BelajarPage({
               </button>
               <button
                 onClick={() => handleContentChange("quiz")}
-                className={`px-4 py-2 rounded ${
+                className={`px-3 py-2 text-sm md:px-4 md:py-2 md:text-base rounded ${
                   activeContent === "quiz"
                     ? "bg-blue-500 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -141,13 +143,19 @@ export default function BelajarPage({
           </div>
         </div>
         <div>
-          <UserProgress {...userProgress} />
-          <AnimatedAvatar emotion={avatarEmotion} speech={avatarSpeech} />
-          <LearningPreferences onSave={handlePreferencesSave} />
+          <div className="space-y-4 lg:space-y-6">
+            <UserProgress {...userProgress} />
+            <div className="flex justify-center items-center">
+              <AnimatedAvatar emotion={avatarEmotion} speech={avatarSpeech} />
+            </div>
+            <LearningPreferences onSave={handlePreferencesSave} />
+          </div>
         </div>
       </div>
 
-      <PythonPlayground />
+      <div className="mt-4 lg:mt-8">
+        <PythonPlayground />
+      </div>
       <AIAgentChat />
     </div>
   );

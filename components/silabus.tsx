@@ -34,24 +34,26 @@ export function Silabus({
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Silabus: {courseInfo.title}</CardTitle>
+    <Card className="mb-4">
+      <CardHeader className="px-4 py-3 md:px-6 md:py-4">
+        <CardTitle className="text-lg md:text-xl">
+          Silabus: {courseInfo.title}
+        </CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="px-4 md:px-6">
         <Accordion type="single" collapsible className="w-full">
           {courseInfo.syllabus.map((item: SyllabusItem, index: number) => (
             <AccordionItem value={`item-${index}`} key={index}>
               <AccordionTrigger
                 onClick={() => onSectionChange(index)}
-                className={
+                className={`text-sm md:text-base ${
                   activeSection === index ? "font-bold text-blue-500" : ""
-                }
+                }`}
               >
                 {item.title}
               </AccordionTrigger>
               <AccordionContent>
-                <ul className="list-disc pl-5 space-y-2">
+                <ul className="list-disc pl-4 md:pl-5 space-y-1 md:space-y-2 text-sm md:text-base">
                   {item.topics.map((topic: string, topicIndex: number) => (
                     <li key={topicIndex}>{topic}</li>
                   ))}
