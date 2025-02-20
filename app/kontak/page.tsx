@@ -16,8 +16,8 @@ export default function KontakPage() {
       </header>
 
       <div className="flex justify-center items-center gap-8">
-        <div>
-          <Card>
+        <div className="w-full max-w-md">
+          <Card className="w-full">
             <CardHeader>
               <CardTitle>Kirim Pesan</CardTitle>
             </CardHeader>
