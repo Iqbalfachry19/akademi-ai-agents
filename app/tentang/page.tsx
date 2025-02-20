@@ -50,7 +50,7 @@ export default function TentangPage() {
         </Card>
       </div>
 
-      <section className="mb-16">
+      {/* <section className="mb-16">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           Tim Kami
         </h2>
@@ -109,9 +109,9 @@ export default function TentangPage() {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </section> */}
 
-      <section className="mb-16">
+      {/* <section className="mb-16">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           Pencapaian Kami
         </h2>
@@ -141,7 +141,7 @@ export default function TentangPage() {
             </div>
           </Card>
         </div>
-      </section>
+      </section> */}
 
       <section>
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
