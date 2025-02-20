@@ -114,7 +114,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold">Teknologi Terkini</h3>
                   <p className="text-gray-500 dark:text-gray-400">
                     Pelajari teknologi AI terbaru, termasuk LLM, Generative AI,
-                    dan framework seperti Zerepy dan ElizaOS.
+                    dan framework seperti Zerepy dan ElizaOS
                   </p>
                 </div>
                 <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-lg transition-colors" />
