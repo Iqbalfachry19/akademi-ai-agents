@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import React from "react";
 import { AIAgentChat } from "@/components/ai-agent-chat";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,25 +24,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <Header />
         <main className="flex-grow">{children}</main>
-        <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-          <p className="text-xs text-gray-500 dark:text-gray-400">
-            © 2025 Akademi AI Agents. Hak Cipta Dilindungi.
-          </p>
-          <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-            <Link
-              className="text-xs hover:underline underline-offset-4"
-              href="kebijakan-privasi"
-            >
-              Kebijakan Privasi
-            </Link>
-            <Link
-              className="text-xs hover:underline underline-offset-4"
-              href="syarat-ketentuan"
-            >
-              Syarat & Ketentuan
-            </Link>
-          </nav>
-        </footer>
+        <Footer />
         <AIAgentChat />
       </body>
     </html>
