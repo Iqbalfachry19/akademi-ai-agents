@@ -30,13 +30,13 @@ export default function RootLayout({
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
             <Link
               className="text-xs hover:underline underline-offset-4"
-              href="#"
+              href="kebijakan-privasi"
             >
               Kebijakan Privasi
             </Link>
             <Link
               className="text-xs hover:underline underline-offset-4"
-              href="#"
+              href="syarat-ketentuan"
             >
               Syarat & Ketentuan
             </Link>

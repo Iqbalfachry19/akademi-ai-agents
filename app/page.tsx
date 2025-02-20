@@ -30,7 +30,9 @@ export default function Home() {
                 <Button asChild>
                   <Link href="/kursus">Mulai Belajar</Link>
                 </Button>
-                <Button variant="outline">Pelajari Lebih Lanjut</Button>
+                <Button variant="outline">
+                  <Link href="/tentang">Pelajari Lebih Lanjut</Link>
+                </Button>
               </div>
             </div>
           </div>
